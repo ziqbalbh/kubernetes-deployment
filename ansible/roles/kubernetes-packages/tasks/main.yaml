@@ -29,3 +29,6 @@
     - kubeadm
     - kubectl
     - kubelet
+- name: reboot the vm
+  become: yes
+  ansible.builtin.reboot:

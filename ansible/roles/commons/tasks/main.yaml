@@ -34,3 +34,10 @@
     value: 1
     sysctl_set: yes
     reload: yes
+- name: iptables stuff
+  become: yes
+  shell: |
+      echo br_netfilter > /etc/modules-load.d/br_netfilter.conf
+      systemctl restart systemd-modules-load.service
+      echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
+      echo 1 > /proc/sys/net/bridge/bridge-nf-call-ip6tables

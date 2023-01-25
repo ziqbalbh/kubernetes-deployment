@@ -6,7 +6,7 @@ nodeRegistration:
   criSocket: "unix:///run/containerd/containerd.sock"
 discovery:
   bootstrapToken:
-    apiServerEndpoint: "{{ hostvars[groups['control-plane'][0]]['ansible_default_ipv4']['address'] }}:6443"
+    apiServerEndpoint: "{{ hostvars[groups['control_plane'][0]]['ansible_default_ipv4']['address'] }}:6443"
     token: "{{ token }}"
     caCertHashes:
       - "{{ cert_hash }}"
