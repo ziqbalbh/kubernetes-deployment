@@ -2,16 +2,14 @@ all:
   children:
     control_plane:
       hosts:
-        control-plane-0.proxmox.arcdsc.com:
-          ansible_host: 10.10.10.30
+        vm-master-k8s:
+          ansible_host: 172.16.20.4
     worker_nodes:
       hosts:
-        worker-0.proxmox.arcdsc.com:
-          ansible_host: 10.10.10.40
-        worker-1.proxmox.arcdsc.com:
-          ansible_host: 10.10.10.41
-        worker-2.proxmox.arcdsc.com:
-          ansible_host: 10.10.10.42
+        vm-worker1-k8s:
+          ansible_host: 172.16.20.5
+        vm-worker2-k8s:
+          ansible_host: 172.16.20.6
   vars:
     ansible_user: "ansible"
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
