@@ -4,12 +4,15 @@ all:
       hosts:
         vm-master-k8s:
           ansible_host: 172.16.20.4
+          ansible_user: vmadmin
     worker_nodes:
       hosts:
         vm-worker1-k8s:
           ansible_host: 172.16.20.5
+          ansible_user: vmadmin
         vm-worker2-k8s:
           ansible_host: 172.16.20.6
+          ansible_user: vmadmin
   vars:
     ansible_user: "ansible"
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
